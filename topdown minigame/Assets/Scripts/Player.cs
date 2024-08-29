@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float speed;
+    public float runSpeed;
+    private float initialSpeed;
     private Rigidbody2D rig;
     private Vector2 _direction;
     public Vector2 direction
@@ -18,14 +20,40 @@ public class Player : MonoBehaviour
     private void Start()
     {
         rig = GetComponent<Rigidbody2D>();
+        initialSpeed = speed;
     }
 
     private void Update()
     {
-        _direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        OnInput();
+        OnRun();
     }
     private void FixedUpdate()
     {
+        OnMove();
+    }
+
+    #region Movement
+
+    void OnInput()
+    {
+        _direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+    }
+    void OnMove()
+    {
         rig.MovePosition(rig.position + _direction * speed * Time.fixedDeltaTime);
     }
+    void OnRun()
+    {
+        if(Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            speed = runSpeed;
+        }
+        if (Input.GetKeyUp(KeyCode.RightShift))
+        {
+            speed = initialSpeed;
+        }
+    }
+
+    #endregion
 }

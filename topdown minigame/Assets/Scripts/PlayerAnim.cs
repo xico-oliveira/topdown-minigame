@@ -17,11 +17,11 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (player.direction.sqrMagnitude > 0) 
         {
-            anim.SetInteger("transition", 1);
+            anim.SetInteger("Base", 1);
         }
         else
         {
-            anim.SetInteger("transition", 0);
+            anim.SetInteger("Base", 0);
         }
         
     }

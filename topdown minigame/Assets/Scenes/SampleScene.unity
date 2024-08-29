@@ -17056,8 +17056,8 @@ GameObject:
   - component: {fileID: 1270799669}
   - component: {fileID: 1270799668}
   - component: {fileID: 1270799667}
-  - component: {fileID: 1270799671}
   - component: {fileID: 1270799673}
+  - component: {fileID: 1270799671}
   - component: {fileID: 1270799672}
   m_Layer: 0
   m_Name: Player
@@ -17218,6 +17218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  runSpeed: 99
 --- !u!114 &1270799672
 MonoBehaviour:
   m_ObjectHideFlags: 0
