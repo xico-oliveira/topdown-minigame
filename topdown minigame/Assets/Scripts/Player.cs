@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
         {
             speed = runSpeed;
         }
-        if (Input.GetKeyUp(KeyCode.RightShift))
+        if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             speed = initialSpeed;
         }
